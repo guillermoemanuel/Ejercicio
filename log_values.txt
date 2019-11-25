@@ -1,0 +1,24 @@
+USE [MIDAS]
+GO
+
+/****** Object:  Table [dbo].[LOG_VALUES]    Script Date: 11/25/2019 14:17:16 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[LOG_VALUES](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[typeLog] [varchar](10) NOT NULL,
+	[dateLog] [varchar](50) NOT NULL,
+	[messageLog] [varchar](800) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
