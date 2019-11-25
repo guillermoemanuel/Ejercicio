@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Midas">
+  <ClassDiagramComponents>
+    <Class name="Console" package="midas" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="logTo"/>
+          <Argument type="boolean" name="logMessage"/>
+          <Argument type="boolean" name="logWarning"/>
+          <Argument type="boolean" name="logError"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="logMessage" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DataBase" package="midas" visibility="public" xPosition="-476.0" yPosition="299.0">
+      <Fields>
+        <Field name="userName" type="String" visibility="private"/>
+        <Field name="password" type="String" visibility="private"/>
+        <Field name="dbms" type="String" visibility="private"/>
+        <Field name="serverName" type="String" visibility="private"/>
+        <Field name="portNumber" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="logTo"/>
+          <Argument type="boolean" name="logMessage"/>
+          <Argument type="boolean" name="logWarning"/>
+          <Argument type="boolean" name="logError"/>
+          <Argument type="String" name="userName"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="dbms"/>
+          <Argument type="String" name="serverName"/>
+          <Argument type="String" name="portNumber"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="conexion" returnType="void" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+        <Method name="FilterlogMessage" returnType="void" visibility="public">
+          <Argument type="String" name="typeMsg"/>
+        </Method>
+        <Method name="logMessage" returnType="void" visibility="public"/>
+        <Method name="getUserName" returnType="String" visibility="public"/>
+        <Method name="setUserName" returnType="void" visibility="public">
+          <Argument type="String" name="userName"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getDbms" returnType="String" visibility="public"/>
+        <Method name="setDbms" returnType="void" visibility="public">
+          <Argument type="String" name="dbms"/>
+        </Method>
+        <Method name="getServerName" returnType="String" visibility="public"/>
+        <Method name="setServerName" returnType="void" visibility="public">
+          <Argument type="String" name="serverName"/>
+        </Method>
+        <Method name="getPortNumber" returnType="String" visibility="public"/>
+        <Method name="setPortNumber" returnType="void" visibility="public">
+          <Argument type="String" name="portNumber"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JobLogger" package="midas" visibility="public" isAbstract="true" xPosition="674.0" yPosition="23.0">
+      <Fields>
+        <Field name="logTo" type="String" visibility="protected"/>
+        <Field name="logMessage" type="boolean" visibility="protected"/>
+        <Field name="logWarning" type="boolean" visibility="protected"/>
+        <Field name="logError" type="boolean" visibility="protected"/>
+        <Field name="l" type="String" visibility="protected"/>
+        <Field name="logger" type="Logger" visibility="protected" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="logTo"/>
+          <Argument type="boolean" name="logMessage"/>
+          <Argument type="boolean" name="logWarning"/>
+          <Argument type="boolean" name="logError"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="LogFilter" returnType="void" visibility="public">
+          <Argument type="String" name="messageText"/>
+          <Argument type="boolean" name="message"/>
+          <Argument type="boolean" name="warning"/>
+          <Argument type="boolean" name="error"/>
+        </Method>
+        <Method name="logMessage" returnType="void" visibility="public"/>
+        <Method name="Clone" returnType="Object" visibility="public"/>
+        <Method name="getLogTo" returnType="String" visibility="public"/>
+        <Method name="setLogTo" returnType="void" visibility="public">
+          <Argument type="String" name="logTo"/>
+        </Method>
+        <Method name="getLogMessage" returnType="boolean" visibility="public"/>
+        <Method name="setLogMessage" returnType="void" visibility="public">
+          <Argument type="boolean" name="logMessage"/>
+        </Method>
+        <Method name="getLogWarning" returnType="boolean" visibility="public"/>
+        <Method name="setLogWarning" returnType="void" visibility="public">
+          <Argument type="boolean" name="logWarning"/>
+        </Method>
+        <Method name="getLogError" returnType="boolean" visibility="public"/>
+        <Method name="setLogError" returnType="void" visibility="public">
+          <Argument type="boolean" name="logError"/>
+        </Method>
+        <Method name="getL" returnType="String" visibility="public"/>
+        <Method name="setL" returnType="void" visibility="public">
+          <Argument type="String" name="l"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JobLoggerPrototype" package="midas" visibility="public" xPosition="1323.0" yPosition="111.0">
+      <Fields>
+        <Field name="prototypes" type="HashMap&lt;String, JobLogger&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Prototype" returnType="Object" visibility="public">
+          <Argument type="String" name="logTo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Midas" package="midas" visibility="public" xPosition="1323.0" yPosition="-23.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Search" package="midas" visibility="public" xPosition="6.0" yPosition="205.0">
+      <Fields>
+        <Field name="logFileFolder" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="logTo"/>
+          <Argument type="boolean" name="logMessage"/>
+          <Argument type="boolean" name="logWarning"/>
+          <Argument type="boolean" name="logError"/>
+          <Argument type="String" name="logFileFolder"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="logMessage" returnType="void" visibility="public"/>
+        <Method name="getLogFileFolder" returnType="String" visibility="public"/>
+        <Method name="setLogFileFolder" returnType="void" visibility="public">
+          <Argument type="String" name="logFileFolder"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="prototypes" source="midas.JobLoggerPrototype" target="midas.JobLogger" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="HashMap&lt;String, JobLogger&gt;"/>
+    <IsRelation name="is" source="midas.Console" target="midas.JobLogger"/>
+    <IsRelation name="is" source="midas.DataBase" target="midas.JobLogger"/>
+    <IsRelation name="is" source="midas.Search" target="midas.JobLogger"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
